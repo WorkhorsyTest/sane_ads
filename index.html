@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script type="text/javascript" src="sane_ads.js"></script>
+	</head>
+	<body>
+
+	<script>
+	document.body.onload = function() {
+		var memory_max = 1024 * 3;
+		appendAd(document.body, memory_max, 'example_ad.html', 100, 600);
+		appendAd(document.body, 0, 'example_ad.html', 100, 600);
+		appendAd(document.body, memory_max, 'example_ad.html', 100, 600);
+	};
+
+	</script>
+	</body>
+</html>
