@@ -90,7 +90,6 @@ function blobToDataURI(blob, cb) {
 	a.readAsDataURL(blob);
 }
 
-// FIXME: This breaks in IE 11
 function httpGetBlob(request, success_cb, fail_cb) {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function() {
@@ -109,9 +108,9 @@ function httpGetBlob(request, success_cb, fail_cb) {
 	xhr.onerror = function() {
 		if (fail_cb) fail_cb(0);
 	};
+	xhr.open('GET', request, true);
 	xhr.timeout = 3000;
 	xhr.responseType = 'blob';
-	xhr.open('GET', request, true);
 	xhr.send(null);
 }
 
